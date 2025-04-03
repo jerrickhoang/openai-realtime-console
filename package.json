@@ -1,32 +1,26 @@
 {
-  "type": "module",
+  "name": "openai-realtime-console",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "node server.js --dev",
-    "start": "node server.js",
-    "build": "npm run clean && npm run build:client && npm run build:server && npm run build:verify",
-    "clean": "rm -rf dist client/dist client/client/dist",
-    "build:client": "vite build --outDir client/dist/client --ssrManifest",
-    "build:server": "vite build --outDir client/dist/server --ssr /index.js",
-    "build:verify": "node -e \"const fs=require('fs'); const path=require('path'); const dir='client/client/dist/client'; console.log('Build output exists:', fs.existsSync(path.join(process.cwd(), dir)));\"",
-    "devinstall": "zx ../../devinstall.mjs -- node server.js --dev",
-    "lint": "eslint . --ext .js,.jsx --fix"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "history": "^5.3.0",
-    "minipass": "^7.0.4",
+    "next": "^14.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-feather": "^2.0.10",
-    "react-router-dom": "^6.20.0"
+    "react-feather": "^2.0.10"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.1.0",
     "postcss": "^8.4.31",
-    "postcss-nesting": "^12.0.2",
-    "postcss-preset-env": "^7.7.1",
-    "tailwindcss": "^3.4.1",
-    "vite": "^5.0.2"
+    "tailwindcss": "^3.4.1"
   }
 }

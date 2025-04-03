@@ -1,39 +1,69 @@
 # OpenAI Realtime Console
 
-This is an example application showing how to use the [OpenAI Realtime API](https://platform.openai.com/docs/guides/realtime) with [WebRTC](https://platform.openai.com/docs/guides/realtime-webrtc).
+A Next.js application for interfacing with OpenAI's Realtime API.
 
-## Installation and usage
+## Features
 
-Before you begin, you'll need an OpenAI API key - [create one in the dashboard here](https://platform.openai.com/settings/api-keys). Create a `.env` file from the example file and set your API key in there:
+- Real-time voice conversation with OpenAI models
+- Event logging for all API interactions
+- Tool integrations (weather, image generation)
+- Rich presence mode configuration
 
-```bash
-cp .env.example .env
-```
+## Getting Started
 
-Running this application locally requires [Node.js](https://nodejs.org/) to be installed. Install dependencies for the application with:
+### Prerequisites
+
+- Node.js 16.x or later
+- An OpenAI API key with access to the Realtime API
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
 
 ```bash
 npm install
 ```
 
-Start the application server with:
+3. Create a `.env.local` file with your OpenAI API key:
+
+```
+OPENAI_API_KEY=your_openai_api_key_here
+```
+
+### Development
+
+Run the development server:
 
 ```bash
 npm run dev
 ```
 
-This should start the console application on [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This application is a minimal template that uses [express](https://expressjs.com/) to serve the React frontend contained in the [`/client`](./client) folder. The server is configured to use [vite](https://vitejs.dev/) to build the React frontend.
+### Production Build
 
-This application shows how to send and receive Realtime API events over the WebRTC data channel and configure client-side function calling. You can also view the JSON payloads for client and server events using the logging panel in the UI.
+Build the application for production:
 
-For a more comprehensive example, see the [OpenAI Realtime Agents](https://github.com/openai/openai-realtime-agents) demo built with Next.js, using an agentic architecture inspired by [OpenAI Swarm](https://github.com/openai/swarm).
+```bash
+npm run build
+```
 
-## Previous WebSockets version
+Start the production server:
 
-The previous version of this application that used WebSockets on the client (not recommended in browsers) [can be found here](https://github.com/openai/openai-realtime-console/tree/websockets).
+```bash
+npm start
+```
+
+## Deploying to Vercel
+
+This application is optimized for deployment on Vercel.
+
+1. Push your code to a Git repository
+2. Import the project in the Vercel dashboard
+3. Set the OPENAI_API_KEY environment variable in the Vercel project settings
+4. Deploy!
 
 ## License
 
-MIT
+This project is licensed under the MIT License - see the LICENSE file for details.

@@ -19,3 +19,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+.env.local
