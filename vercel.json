@@ -8,12 +8,16 @@
   ],
   "routes": [
     {
+      "src": "/debug",
+      "dest": "/server.js"
+    },
+    {
       "src": "/(.*)",
       "dest": "/server.js"
     }
   ],
-  "buildCommand": "npm run build",
+  "buildCommand": "node vercel-build.js",
   "installCommand": "npm install",
   "devCommand": "npm run dev",
-  "outputDirectory": "client/dist"
+  "outputDirectory": "client/client/dist"
 } 
